@@ -4,11 +4,11 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
-class IShape
+class Decorator : sf::Shape
 {
 public:
-	virtual ~IShape() {};
+	Decorator(sf::Shape &shape);
 	virtual double GetArea() const = 0;
 	virtual double GetPerimeter() const = 0;
-	virtual void Draw(sf::RenderWindow& window) const = 0;
+	sf::Shape &sh;
 };
