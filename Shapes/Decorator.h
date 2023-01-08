@@ -4,11 +4,11 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 
-class Decorator : sf::Shape
+class Decorator// : sf::Shape
 {
 public:
-	Decorator(sf::Shape &shape);
+	Decorator(sf::Shape& shape);
 	virtual double GetArea() const = 0;
 	virtual double GetPerimeter() const = 0;
-	sf::Shape &sh;
+	sf::Shape& sh;
 };
