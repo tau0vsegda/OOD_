@@ -10,7 +10,6 @@ public:
 	{
 		m_r = shape.getRadius();
 	}
-	~CCircleDecorator();
 	double GetPerimeter() const override;
 	double GetArea() const override;
 private:

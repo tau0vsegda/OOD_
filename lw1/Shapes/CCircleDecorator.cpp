@@ -1,12 +1,8 @@
 #include "CCircleDecorator.h"
 
-CCircleDecorator::~CCircleDecorator()
-{
-}
-
 double CCircleDecorator::GetPerimeter() const
 {
-	return 2 * m_r * PI;
+	return PI * m_r * 2;
 }
 double CCircleDecorator::GetArea() const
 {

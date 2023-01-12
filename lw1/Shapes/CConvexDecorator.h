@@ -10,7 +10,6 @@ public:
 		m_p2 = shape.getPoint(1);
 		m_p3 = shape.getPoint(2);
 	}
-	~CConvexDecorator();
 	double GetPerimeter() const override;
 	double GetArea() const override;
 private:

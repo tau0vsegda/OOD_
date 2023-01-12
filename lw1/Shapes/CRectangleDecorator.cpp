@@ -1,9 +1,5 @@
 #include "CRectangleDecorator.h"
 
-CRectangleDecorator::~CRectangleDecorator()
-{
-}
-
 double CRectangleDecorator::GetPerimeter() const
 {
 	return (m_size.x + m_size.y) * 2;

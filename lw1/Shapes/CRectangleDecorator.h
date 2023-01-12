@@ -8,7 +8,6 @@ public:
 	{
 		m_size = shape.getSize();
 	}
-	~CRectangleDecorator();
 	double GetPerimeter() const override;
 	double GetArea() const override;
 private:
