@@ -1,10 +1,11 @@
+#pragma once
 #include "CCircleDecorator.h"
 #include "CConvexDecorator.h"
 #include "CRectangleDecorator.h"
+#include "ShapeInfoVisitor.h"
 #include "CircleFactory.h"
 #include "ConvexFactory.h"
 #include "RectangleFactory.h"
-#include "ShapeInfoVisitor.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -51,24 +52,23 @@ int main(int argc, char* argv[])
         switch (shapeType[inputCommand]) {
         case 0:
             {
-                CCircleDecorator CircleD(circleF->createShape(args));
-                window.draw(CircleD.sh);
-                shInfo.Visit(CircleD);
+                CCircleDecorator circleD(circleF->createShape(args));
+                circleD.Draw(window);
+                circleD.Accept(shInfo);
             }
             break; 
         case 1:
             {
-                CConvexDecorator ConvexD(convexF->createShape(args));
-                window.draw(ConvexD.sh);
-
-                shInfo.Visit(ConvexD);
+                CConvexDecorator convexD(convexF->createShape(args));
+                convexD.Draw(window);
+                convexD.Accept(shInfo);
             }
             break;
         case 2:
             {
-                CRectangleDecorator RectangleD(rectangleF->createShape(args));
-                window.draw(RectangleD.sh);
-                shInfo.Visit(RectangleD);
+                CRectangleDecorator rectangleD(rectangleF->createShape(args));
+                rectangleD.Draw(window);
+                rectangleD.Accept(shInfo);
             }
             break;
         default:

@@ -1,7 +1,6 @@
 #include "CCircleDecorator.h"
 #include "CConvexDecorator.h"
 #include "CRectangleDecorator.h"
-#include "ShapeFactory.h"
 #include <iostream>
 #include <fstream>
 #include <vector>

@@ -1,3 +1,4 @@
+#pragma once
 #include "CircleFactory.h"
 CircleFactory::CircleFactory()
 {
@@ -5,7 +6,7 @@ CircleFactory::CircleFactory()
 CircleFactory* CircleFactory::m_instance = 0;
 CircleFactory* CircleFactory::Instance() {
         if (m_instance == 0) {
-            m_instance = new CircleFactory;
+            m_instance = new CircleFactory();
         }
         return m_instance;
 }

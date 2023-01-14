@@ -5,9 +5,8 @@ class ConvexFactory : public ShapeFactory
 public:
     static ConvexFactory* Instance();
     sf::ConvexShape& createShape(std::vector<std::string>& args) const override;
-protected:
-    ConvexFactory();
 private:
+    ConvexFactory();
     static ConvexFactory* m_instance;
 };
 

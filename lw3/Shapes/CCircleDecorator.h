@@ -11,6 +11,8 @@ public:
 	}
 	double GetPerimeter() const override;
 	double GetArea() const override;
+	void Draw(sf::RenderWindow& window) const override;
+	void Accept(ShapeVisitor& visitor) const override;
 private:
 	float m_r;
 };

@@ -10,6 +10,7 @@ public:
 	}
 	double GetPerimeter() const override;
 	double GetArea() const override;
+	void Draw(sf::RenderWindow& window) const override;
 private:
 	sf::Vector2f m_size;
 };

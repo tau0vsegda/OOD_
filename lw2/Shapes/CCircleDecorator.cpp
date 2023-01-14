@@ -1,3 +1,4 @@
+#pragma once
 #include "CCircleDecorator.h"
 
 double CCircleDecorator::GetPerimeter() const
@@ -7,4 +8,8 @@ double CCircleDecorator::GetPerimeter() const
 double CCircleDecorator::GetArea() const
 {
 	return pow(m_r, 2) * PI;
+}
+void CCircleDecorator::Draw(sf::RenderWindow& window) const
+{
+	window.draw(sh);
 }

@@ -1,3 +1,4 @@
+#pragma once
 #include "CConvexDecorator.h"
 
 double CConvexDecorator::GetPerimeter() const
@@ -10,4 +11,13 @@ double CConvexDecorator::GetPerimeter() const
 double CConvexDecorator::GetArea() const
 {
 	return abs((m_p2.x - m_p1.x) * (m_p3.y - m_p1.y) - (m_p3.x - m_p1.x) * (m_p2.y - m_p1.y)) / 2;
+}
+
+void CConvexDecorator::Draw(sf::RenderWindow& window) const
+{
+	window.draw(sh);
+}
+void CConvexDecorator::Accept(ShapeVisitor& visitor) const
+{
+	visitor.Visit(*this);
 }

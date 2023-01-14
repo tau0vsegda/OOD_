@@ -1,3 +1,4 @@
+#pragma once
 #include "CRectangleDecorator.h"
 
 double CRectangleDecorator::GetPerimeter() const
@@ -7,4 +8,9 @@ double CRectangleDecorator::GetPerimeter() const
 double CRectangleDecorator::GetArea() const
 {
 	return m_size.x * m_size.y;
+}
+
+void CRectangleDecorator::Draw(sf::RenderWindow& window) const
+{
+	window.draw(sh);
 }

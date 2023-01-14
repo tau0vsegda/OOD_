@@ -13,5 +13,7 @@ public:
 	}
 	virtual double GetArea() const = 0;
 	virtual double GetPerimeter() const = 0;
+	virtual void Draw(sf::RenderWindow& window) const = 0;
+protected:
 	sf::Shape& sh;
 };

@@ -1,3 +1,4 @@
+#pragma once
 #include "ConvexFactory.h"
 ConvexFactory::ConvexFactory()
 {
@@ -5,7 +6,7 @@ ConvexFactory::ConvexFactory()
 ConvexFactory* ConvexFactory::m_instance = 0;
 ConvexFactory* ConvexFactory::Instance() {
     if (m_instance == 0) {
-        m_instance = new ConvexFactory;
+        m_instance = new ConvexFactory();
     }
     return m_instance;
 }

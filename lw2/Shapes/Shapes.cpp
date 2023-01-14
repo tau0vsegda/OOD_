@@ -1,3 +1,4 @@
+#pragma once
 #include "CCircleDecorator.h"
 #include "CConvexDecorator.h"
 #include "CRectangleDecorator.h"
@@ -9,6 +10,12 @@
 #include <vector>
 #include <map>
 #include <sstream>
+
+const std::string P = " P=";
+const std::string S = " S=";
+const std::string CIRCLE = "CIRCLE";
+const std::string TRIANGLE = "TRIANGLE";
+const std::string RECTANGLE = "RECTANGLE";
 
 std::vector<std::string> GetArgs(std::istream& param)
 {
@@ -23,9 +30,9 @@ std::vector<std::string> GetArgs(std::istream& param)
 }
 
 std::map <std::string, int> shapeType = {
-    {"CIRCLE", 0},
-    {"TRIANGLE", 1},
-    {"RECTANGLE", 2},
+    {CIRCLE, 0},
+    {TRIANGLE, 1},
+    {RECTANGLE, 2},
 };
 
 int main(int argc, char* argv[])
@@ -49,23 +56,23 @@ int main(int argc, char* argv[])
         switch (shapeType[inputCommand]) {
         case 0:
             {
-                CCircleDecorator CircleD(circleF->createShape(args));
-                window.draw(CircleD.sh);
-                output << "CIRCLE P=" << CircleD.GetPerimeter() << " S=" << CircleD.GetArea() << std::endl;
+                CCircleDecorator circleD(circleF->createShape(args));
+                circleD.Draw(window);
+                output << CIRCLE << P << circleD.GetPerimeter() << S << circleD.GetArea() << std::endl;
             }
             break; 
         case 1:
             {
-                CConvexDecorator ConvexD(convexF->createShape(args));
-                window.draw(ConvexD.sh);
-                output << "TRIANGLE P=" << ConvexD.GetPerimeter() << " S=" << ConvexD.GetArea() << std::endl;
+                CConvexDecorator convexD(convexF->createShape(args));
+                convexD.Draw(window);
+                output << TRIANGLE << P << convexD.GetPerimeter() << S << convexD.GetArea() << std::endl;
             }
             break;
         case 2:
             {
-                CRectangleDecorator RectangleD(rectangleF->createShape(args));
-                window.draw(RectangleD.sh);
-                output << "RECTANGLE P=" << RectangleD.GetPerimeter() << " S=" << RectangleD.GetArea() << std::endl;
+                CRectangleDecorator rectangleD(rectangleF->createShape(args));
+                rectangleD.Draw(window);
+                output << RECTANGLE << P << rectangleD.GetPerimeter() << S << rectangleD.GetArea() << std::endl;
             }
             break;
         default:

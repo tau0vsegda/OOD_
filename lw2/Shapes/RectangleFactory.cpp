@@ -1,3 +1,4 @@
+#pragma once
 #include "RectangleFactory.h"
 RectangleFactory::RectangleFactory()
 {
@@ -5,7 +6,7 @@ RectangleFactory::RectangleFactory()
 RectangleFactory* RectangleFactory::m_instance = 0;
 RectangleFactory* RectangleFactory::Instance() {
     if (m_instance == 0) {
-        m_instance = new RectangleFactory;
+        m_instance = new RectangleFactory();
     }
     return m_instance;
 }

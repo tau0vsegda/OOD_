@@ -6,9 +6,8 @@ class CircleFactory : public ShapeFactory
 public:
     static CircleFactory* Instance();
     sf::CircleShape& createShape(std::vector<std::string>& args) const override;
-protected:
-    CircleFactory();
 private:
+    CircleFactory();
     static CircleFactory* m_instance;
 };
 
